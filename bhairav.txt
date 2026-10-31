@@ -1,0 +1,6 @@
+S r G M G r S
+S r G M P M G r S
+G M P d P M G r
+S r G M P d N S'
+S' N d P M G r S
+d N S' N d P M G
