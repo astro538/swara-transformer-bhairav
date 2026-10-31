@@ -9,6 +9,7 @@ This is an educational generative-model prototype. It is not a validated model o
 | File | Description |
 | --- | --- |
 | `Bhairav.ipynb` | Notebook containing tokenization, Transformer training, generation, and WAV synthesis |
+| `bhairav.txt` | a small raag bhairav dataset on which the transformer is trained |
 | `generated_bhairav.wav` | A generated audio artifact committed to the repository |
 | `README.md` | Project documentation |
 
@@ -25,14 +26,14 @@ The current audio conversion is intentionally simple: it uses one fixed-duration
 
 ## Important input requirement
 
-The notebook opens `bhairav.txt`, but **that input file is not present in the repository tree**. You must provide it in the notebook's working directory before running the data-loading cell. Each non-empty line should contain one phrase as whitespace-separated tokens using the notation expected by the notebook, for example:
+The notebook opens `bhairav.txt`. You must provide it in the notebook's working directory before running the data-loading cell. Each non-empty line should contain one phrase as whitespace-separated tokens using the notation expected by the notebook, for example:
 
 ```text
-S r G M P d N S'
-S' N d P M G r S
+S r G M P M G M
+P d P M G M G r S
 ```
 
-This example illustrates the expected format only; use a source dataset you have permission to use, and document its provenance and license before sharing a research dataset. Token spelling must match the notation used in the generation seed and note-mapping code.
+This example illustrates the expected format only; Token spelling must match the notation used in the generation seed and note-mapping code.
 
 ## Run in Google Colab
 
@@ -48,17 +49,10 @@ The notebook uses Python, NumPy, PyTorch, and SciPy. A GPU is optional for this 
 
 - The committed WAV file is an example output, not a benchmark.
 - The notebook's stored cell outputs may reflect execution from different points in development. Restart the runtime and run cells in sequence when reproducing the experiment.
-- Since the training text is not included, a fresh run cannot reproduce the committed output without the corresponding input data.
-- There is no held-out evaluation, perplexity report, or expert assessment of raag conformity currently documented in this repository.
 - The notebook contains an optional Git/GitHub upload section. It is not required to train or generate audio. Never put a personal access token in a notebook or commit a credential.
 
 ## Future work
 
-- Include a documented and appropriately licensed swara dataset.
+- Increase the swara dataset and make it more accurate.
 - Separate training and validation phrases and report token-level metrics.
-- Check generated sequences against explicit Bhairav constraints and obtain musical evaluation from knowledgeable practitioners.
 - Replace sine-wave rendering with a soundfont or instrument-aware synthesis pipeline.
-
-## License
-
-No explicit license file was identified in the repository when this README was prepared. Add a license and clarify the data license before redistributing code or training material.
